@@ -3,9 +3,16 @@
     <h2>Binary Search</h2>
     <div class="binary__container">
       <div class="binary__array-container">
-        <h3>Array for search</h3>
+        <h3>Array</h3>
         <div class="binary__array">
           <div v-for="(item, index) in arr" :key="index + 'a'">{{ item }}</div>
+        </div>
+      </div>
+      <div class="binary__input-container">
+        <h3>Number for search</h3>
+        <div class="binary__buttons-container">
+          <InputNumber v-model="numForSearch" inputId="numForSearch" />
+          <Button icon="pi pi-search" severity="success" rounded aria-label="Search" />
         </div>
       </div>
     </div>
@@ -13,7 +20,12 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+import InputNumber from 'primevue/inputnumber';
+import Button from 'primevue/button';
+
 const arr: number[] = Array.from(Array(100).keys());
+const numForSearch = ref(0);
 
 const binarySearch = (list: number[], item: number) => {
   let low = 0;
@@ -38,13 +50,13 @@ const binarySearch = (list: number[], item: number) => {
 .binary {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .binary__container {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
   padding: 20px;
+  gap: 100px;
 }
 
 .binary__array-container {
@@ -57,5 +69,15 @@ const binarySearch = (list: number[], item: number) => {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(10, 1fr);
+}
+
+.binary__input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.binary__buttons-container {
+  display: flex;
+  gap: 10px;
 }
 </style>
