@@ -12,20 +12,29 @@
         <h3>Number for search</h3>
         <div class="binary__buttons-container">
           <InputNumber v-model="numForSearch" inputId="numForSearch" />
-          <Button icon="pi pi-search" severity="success" rounded aria-label="Search" />
+          <Button
+            icon="pi pi-search"
+            severity="success"
+            rounded
+            aria-label="Search"
+            @click="searchIndex"
+          />
         </div>
+        <h3 class="binary__result-title">Index of searched number</h3>
+        <div>{{ searchedNumIndex }}</div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { Ref, ref } from 'vue';
 import InputNumber from 'primevue/inputnumber';
 import Button from 'primevue/button';
 
 const arr: number[] = Array.from(Array(100).keys());
 const numForSearch = ref(0);
+const searchedNumIndex: Ref<number | string> = ref(0);
 
 const binarySearch = (list: number[], item: number) => {
   let low = 0;
@@ -43,6 +52,10 @@ const binarySearch = (list: number[], item: number) => {
     }
   }
   return 'not found';
+};
+
+const searchIndex = () => {
+  searchedNumIndex.value = binarySearch(arr, numForSearch.value);
 };
 </script>
 
@@ -79,5 +92,9 @@ const binarySearch = (list: number[], item: number) => {
 .binary__buttons-container {
   display: flex;
   gap: 10px;
+}
+
+.binary__result-title {
+  margin-top: 40px;
 }
 </style>
