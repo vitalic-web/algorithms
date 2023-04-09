@@ -1,14 +1,19 @@
 <template>
-  <div>
+  <div class="binary">
     <h2>Binary Search</h2>
-    <div>
-      <div v-for="(item, index) in arr" :key="index + 'a'">{{ item }}</div>
+    <div class="binary__container">
+      <div class="binary__array-container">
+        <h3>Array for search</h3>
+        <div class="binary__array">
+          <div v-for="(item, index) in arr" :key="index + 'a'">{{ item }}</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const arr: number[] = [1, 3, 5, 6, 7, 11, 13, 14, 15];
+const arr: number[] = Array.from(Array(100).keys());
 
 const binarySearch = (list: number[], item: number) => {
   let low = 0;
@@ -28,3 +33,29 @@ const binarySearch = (list: number[], item: number) => {
   return 'not found';
 };
 </script>
+
+<style lang="scss">
+.binary {
+  display: flex;
+  flex-direction: column;
+}
+
+.binary__container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.binary__array-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.binary__array {
+  width: 50%;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(10, 1fr);
+}
+</style>
