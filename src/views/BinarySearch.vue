@@ -27,6 +27,8 @@
         </div>
         <h3 class="binary__result-title">Binary Total Iterations</h3>
         <div>{{ binaryTotalIterations }}</div>
+        <h3 class="binary__result-title">Simple Total Iterations</h3>
+        <div>{{ simpleTotalIterations }}</div>
       </div>
     </div>
   </div>
@@ -41,6 +43,7 @@ const arr: number[] = Array.from(Array(100).keys());
 const numForSearch: Ref<number> = ref(0);
 const searchedNumIndex: Ref<number | string> = ref(0);
 const binaryTotalIterations = ref(0);
+const simpleTotalIterations: Ref<number | undefined> = ref(0);
 
 const binarySearch = (list: number[], item: number) => {
   binaryTotalIterations.value = 0;
@@ -62,8 +65,18 @@ const binarySearch = (list: number[], item: number) => {
   return 'not found';
 };
 
+// eslint-disable-next-line consistent-return
+const simpleSearch = (list: number[], item: number) => {
+  for (let i = 0; i < list.length; i += 1) {
+    if (i === item) {
+      return i;
+    }
+  }
+};
+
 const searchIndex = () => {
   searchedNumIndex.value = binarySearch(arr, numForSearch.value);
+  simpleTotalIterations.value = simpleSearch(arr, numForSearch.value);
 };
 </script>
 
