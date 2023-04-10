@@ -5,7 +5,12 @@
       <div class="binary__array-container">
         <h3>Array</h3>
         <div class="binary__array">
-          <div v-for="(item, index) in arr" :key="index + 'a'">{{ item }}</div>
+          <div
+            v-for="(item, index) in arr"
+            :key="index + 'a'"
+          >
+            {{ item }}
+          </div>
         </div>
       </div>
       <div class="binary__input-container">
@@ -20,8 +25,8 @@
             @click="searchIndex"
           />
         </div>
-        <h3 class="binary__result-title">Index of searched number</h3>
-        <div>{{ searchedNumIndex }}</div>
+        <h3 class="binary__result-title">Binary Total Iterations</h3>
+        <div>{{ binaryTotalIterations }}</div>
       </div>
     </div>
   </div>
@@ -33,13 +38,16 @@ import InputNumber from 'primevue/inputnumber';
 import Button from 'primevue/button';
 
 const arr: number[] = Array.from(Array(100).keys());
-const numForSearch = ref(0);
+const numForSearch: Ref<number> = ref(0);
 const searchedNumIndex: Ref<number | string> = ref(0);
+const binaryTotalIterations = ref(0);
 
 const binarySearch = (list: number[], item: number) => {
+  binaryTotalIterations.value = 0;
   let low = 0;
   let high = list.length - 1;
   while (low <= high) {
+    binaryTotalIterations.value += 1;
     const mid = Math.floor((low + high) / 2);
     const guess = list[mid];
     if (guess === item) {
