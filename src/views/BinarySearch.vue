@@ -8,6 +8,7 @@
           <div
             v-for="(item, index) in arr"
             :key="index + 'a'"
+            :class="[ 'num', { 'num_searched': searchedNumIndex === index } ]"
           >
             {{ item }}
           </div>
@@ -41,7 +42,7 @@ import Button from 'primevue/button';
 
 const arr: number[] = Array.from(Array(100).keys());
 const numForSearch: Ref<number> = ref(0);
-const searchedNumIndex: Ref<number | string> = ref(0);
+const searchedNumIndex: Ref<number | string | null> = ref(null);
 const binaryTotalIterations = ref(0);
 const simpleTotalIterations: Ref<number | undefined> = ref(0);
 
@@ -117,5 +118,18 @@ const searchIndex = () => {
 
 .binary__result-title {
   margin-top: 40px;
+}
+
+.num {
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &_searched {
+    background: greenyellow;
+  }
 }
 </style>
