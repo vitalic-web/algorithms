@@ -25,6 +25,13 @@
             aria-label="Search"
             @click="searchIndex"
           />
+          <Button
+            icon="pi pi-times"
+            severity="danger"
+            rounded
+            aria-label="Cancel"
+            @click="clearResult"
+          />
         </div>
         <h3 class="binary__result-title">Binary Total Iterations</h3>
         <div>{{ binaryTotalIterations }}</div>
@@ -78,6 +85,13 @@ const simpleSearch = (list: number[], item: number) => {
 const searchIndex = () => {
   searchedNumIndex.value = binarySearch(arr, numForSearch.value);
   simpleTotalIterations.value = simpleSearch(arr, numForSearch.value);
+};
+
+const clearResult = () => {
+  numForSearch.value = 0;
+  searchedNumIndex.value = null;
+  binaryTotalIterations.value = 0;
+  simpleTotalIterations.value = 0;
 };
 </script>
 
