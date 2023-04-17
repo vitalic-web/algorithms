@@ -33,12 +33,9 @@
             @click="clearResult"
           />
         </div>
-        <h3 class="binary__result-title">Binary Total Iterations</h3>
-        <div>{{ binaryTotalIterations }}</div>
-        <h3 class="binary__result-title">Simple Total Iterations</h3>
-        <div>{{ simpleTotalIterations }}</div>
-        <h3 class="binary__result-title">Binary search faster</h3>
-        <div>{{ faster }}</div>
+        <ResultTitle text="Binary Total Iterations" :result="binaryTotalIterations" />
+        <ResultTitle text="Simple Total Iterations" :result="Number(simpleTotalIterations)" />
+        <ResultTitle text="Binary search faster" :result="Number(faster)" />
       </div>
     </div>
   </div>
@@ -48,6 +45,7 @@
 import { Ref, ref } from 'vue';
 import InputNumber from 'primevue/inputnumber';
 import Button from 'primevue/button';
+import ResultTitle from '@/components/ResultTitle.vue';
 
 const arr: number[] = Array.from(Array(100).keys());
 const numForSearch: Ref<number> = ref(0);
@@ -133,10 +131,6 @@ const clearResult = () => {
 .binary__buttons-container {
   display: flex;
   gap: 10px;
-}
-
-.binary__result-title {
-  margin-top: 40px;
 }
 
 .num {
