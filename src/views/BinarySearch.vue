@@ -100,7 +100,7 @@ const clearResult = () => {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .binary {
   display: flex;
   flex-direction: column;
@@ -140,8 +140,8 @@ const clearResult = () => {
 }
 
 .num {
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   border: 1px solid black;
   border-radius: 10px;
   display: flex;
