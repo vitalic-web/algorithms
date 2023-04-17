@@ -37,6 +37,8 @@
         <div>{{ binaryTotalIterations }}</div>
         <h3 class="binary__result-title">Simple Total Iterations</h3>
         <div>{{ simpleTotalIterations }}</div>
+        <h3 class="binary__result-title">Binary search faster</h3>
+        <div>{{ faster }}</div>
       </div>
     </div>
   </div>
@@ -50,8 +52,9 @@ import Button from 'primevue/button';
 const arr: number[] = Array.from(Array(100).keys());
 const numForSearch: Ref<number> = ref(0);
 const searchedNumIndex: Ref<number | string | null> = ref(null);
-const binaryTotalIterations = ref(0);
+const binaryTotalIterations: Ref<number> = ref(0);
 const simpleTotalIterations: Ref<number | undefined> = ref(0);
+const faster: Ref<number | undefined> = ref(0);
 
 const binarySearch = (list: number[], item: number) => {
   binaryTotalIterations.value = 0;
@@ -85,6 +88,8 @@ const simpleSearch = (list: number[], item: number) => {
 const searchIndex = () => {
   searchedNumIndex.value = binarySearch(arr, numForSearch.value);
   simpleTotalIterations.value = simpleSearch(arr, numForSearch.value);
+  faster.value = simpleTotalIterations.value
+    && Math.round(simpleTotalIterations.value / binaryTotalIterations.value);
 };
 
 const clearResult = () => {
