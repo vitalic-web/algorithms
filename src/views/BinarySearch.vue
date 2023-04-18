@@ -87,7 +87,7 @@ const searchIndex = () => {
   searchedNumIndex.value = binarySearch(arr, numForSearch.value);
   simpleTotalIterations.value = simpleSearch(arr, numForSearch.value);
   faster.value = simpleTotalIterations.value
-    && Math.round(simpleTotalIterations.value / binaryTotalIterations.value);
+    && Math.floor(simpleTotalIterations.value / binaryTotalIterations.value);
 };
 
 const clearResult = () => {
