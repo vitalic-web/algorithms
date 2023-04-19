@@ -9,6 +9,7 @@
             v-for="(item, index) in arr"
             :key="index + 'a'"
             :class="[ 'num', { 'num_searched': searchedNumIndex === index } ]"
+            @click="selectNumber"
           >
             {{ item }}
           </div>
@@ -46,6 +47,7 @@ import { Ref, ref } from 'vue';
 import InputNumber from 'primevue/inputnumber';
 import Button from 'primevue/button';
 import ResultTitle from '@/components/ResultTitle.vue';
+import { EventTarget } from '@/types';
 
 const arr: number[] = Array.from(Array(100).keys());
 const numForSearch: Ref<number> = ref(0);
@@ -95,6 +97,10 @@ const clearResult = () => {
   searchedNumIndex.value = null;
   binaryTotalIterations.value = 0;
   simpleTotalIterations.value = 0;
+};
+
+const selectNumber = (evt: EventTarget) => {
+  console.log(evt.target && evt.target.textContent);
 };
 </script>
 
