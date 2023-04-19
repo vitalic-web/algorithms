@@ -18,5 +18,6 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'vue/multi-word-component-names': 'off',
     'import/no-extraneous-dependencies': 'off',
+    'vuejs-accessibility/click-events-have-key-events': 'off',
   },
 };
