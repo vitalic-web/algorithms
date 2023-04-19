@@ -147,6 +147,7 @@ const selectNumber = (evt: EventTarget) => {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
   &_searched {
     background: greenyellow;
   }
