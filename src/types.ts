@@ -1,3 +1,3 @@
 export interface EventTarget extends Event {
-  target: HTMLElement;
+  target: HTMLDivElement;
 }
