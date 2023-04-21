@@ -43,18 +43,20 @@
 </template>
 
 <script setup lang="ts">
-import { Ref, ref } from 'vue';
+import { ref } from 'vue';
 import InputNumber from 'primevue/inputnumber';
 import Button from 'primevue/button';
 import ResultTitle from '@/components/ResultTitle.vue';
-import { EventTarget } from '@/types';
+import {
+  EventTarget, DisplayArray, SearchNumber, ResultNumber, SearchIndex,
+} from '@/types';
 
-const arr: number[] = Array.from(Array(100).keys());
-const numForSearch: Ref<number> = ref(0);
-const searchedNumIndex: Ref<number | string | null> = ref(null);
-const binaryTotalIterations: Ref<number> = ref(0);
-const simpleTotalIterations: Ref<number | undefined> = ref(0);
-const faster: Ref<number | undefined> = ref(0);
+const arr: DisplayArray = Array.from(Array(100).keys());
+const numForSearch: SearchNumber = ref(0);
+const searchedNumIndex: SearchIndex = ref(null);
+const binaryTotalIterations: SearchNumber = ref(0);
+const simpleTotalIterations: ResultNumber = ref(0);
+const faster: ResultNumber = ref(0);
 
 const binarySearch = (list: number[], item: number) => {
   binaryTotalIterations.value = 0;
