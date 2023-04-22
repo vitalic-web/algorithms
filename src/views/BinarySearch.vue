@@ -58,7 +58,7 @@ const binaryTotalIterations: SearchNumber = ref(0);
 const simpleTotalIterations: ResultNumber = ref(0);
 const faster: ResultNumber = ref(0);
 
-const binarySearch = (list: number[], item: number) => {
+const binarySearch = (list: DisplayArray, item: number) => {
   binaryTotalIterations.value = 0;
   let low = 0;
   let high = list.length - 1;
@@ -79,7 +79,7 @@ const binarySearch = (list: number[], item: number) => {
 };
 
 // eslint-disable-next-line consistent-return
-const simpleSearch = (list: number[], item: number) => {
+const simpleSearch = (list: DisplayArray, item: number) => {
   for (let i = 0; i < list.length; i += 1) {
     if (i === item) {
       return i;
