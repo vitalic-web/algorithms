@@ -17,6 +17,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'quick',
     component: () => import('../views/QuickSearchView.vue'),
   },
+  {
+    path: '/caching',
+    name: 'caching',
+    component: () => import('../views/CachingView.vue'),
+  },
 ];
 
 const router = createRouter({

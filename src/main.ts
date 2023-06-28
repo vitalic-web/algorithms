@@ -4,6 +4,7 @@ import AppHighCode from '@/components/AppHighCode.vue';
 import App from './App.vue';
 import router from './router';
 
+import './assets/styles.scss';
 import 'primevue/resources/primevue.min.css';
 import 'primeicons/primeicons.css';
 import 'primevue/resources/themes/lara-light-indigo/theme.css';

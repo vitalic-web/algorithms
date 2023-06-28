@@ -3,7 +3,7 @@
   <div class="sort-container">
     <div class="sort-container__block">
       <h4>Not sorted array</h4>
-      <div class="not-sorted-array">
+      <div class="grid-10">
         <div
           v-for="(item, index) in notSortedArr"
           :key="index + 'nsa'"
@@ -14,7 +14,7 @@
     </div>
     <div class="sort-container__block">
       <h4 @click="sort">Click to sort</h4>
-      <div class="not-sorted-array">
+      <div class="grid-10">
         <div
           v-for="(item, index) in quickSortedArray"
           :key="index + 'sa'"
@@ -128,11 +128,6 @@ const advantages = [
   &__block {
     width: 300px;
   }
-}
-.not-sorted-array {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(10, 1fr);
 }
 
 .advantages {

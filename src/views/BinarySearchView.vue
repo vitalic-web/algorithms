@@ -4,7 +4,7 @@
     <div class="binary__container">
       <div class="binary__array-container">
         <h3>Array</h3>
-        <div class="binary__array">
+        <div class="binary__array grid-10">
           <div
             v-for="(item, index) in arr"
             :key="index + 'a'"
@@ -150,9 +150,6 @@ const selectNumber = (evt: EventTarget) => {
 
 .binary__array {
   width: 50%;
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(10, 1fr);
 }
 
 .binary__input-container {
