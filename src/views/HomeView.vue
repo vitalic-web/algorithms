@@ -1,15 +1,34 @@
 <template>
   <div class="home">
     <h2>Algorithms</h2>
-    <Button icon="pi pi-search" label="Binary Search" @click="redirectBinary" />
+    <div class="home__nav">
+      <RouterLink class="home__nav-item" :to="{ name: 'binary' }">Binary Search</RouterLink>
+      <RouterLink class="home__nav-item" :to="{ name: 'quick' }">Quick Sort</RouterLink>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
-import Button from 'primevue/button';
-
-const router = useRouter();
-
-const redirectBinary = () => router.push('binary');
 </script>
+
+<style lang="scss">
+.home {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  &__nav {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    &-item {
+      border: 1px solid gray;
+      padding: 5px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: blue;
+      font-size: 25px;
+      font-weight: 500;
+    }
+  }
+}
+</style>

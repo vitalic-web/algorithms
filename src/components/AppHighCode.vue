@@ -24,5 +24,6 @@ defineProps({
 <style lang="scss">
 .code pre code {
   padding-right: 15px;
+  padding-bottom: 15px;
 }
 </style>

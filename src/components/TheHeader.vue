@@ -14,5 +14,6 @@ import Button from 'primevue/button';
 .the-header {
   display: flex;
   border-bottom: 1px solid rgba(128, 128, 128, .5);
+  width: 90%;
 }
 </style>

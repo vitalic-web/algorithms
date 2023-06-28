@@ -51,7 +51,6 @@ import ResultTitle from '@/components/ResultTitle.vue';
 import {
   EventTarget, DisplayArray, SearchNumber, ResultNumber, SearchIndex,
 } from '@/types';
-import AppHighCode from '@/components/AppHighCode.vue';
 
 const arr: DisplayArray = Array.from(Array(100).keys());
 const numForSearch: SearchNumber = ref(0);

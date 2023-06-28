@@ -10,7 +10,12 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/binary',
     name: 'binary',
-    component: () => import('../views/BinarySearch.vue'),
+    component: () => import('../views/BinarySearchView.vue'),
+  },
+  {
+    path: '/quick',
+    name: 'quick',
+    component: () => import('../views/QuickSearchView.vue'),
   },
 ];
 

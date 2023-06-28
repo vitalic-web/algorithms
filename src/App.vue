@@ -14,5 +14,8 @@ import TheHeader from '@/components/TheHeader.vue';
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>
