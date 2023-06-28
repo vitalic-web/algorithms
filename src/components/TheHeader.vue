@@ -13,6 +13,6 @@ import Button from 'primevue/button';
 <style lang="scss" scoped>
 .the-header {
   display: flex;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid rgba(128, 128, 128, .5);
 }
 </style>

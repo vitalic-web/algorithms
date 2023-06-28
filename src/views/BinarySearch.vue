@@ -39,6 +39,15 @@
         <ResultTitle text="Binary search faster" :result="Number(faster)" />
       </div>
     </div>
+    <HighCode
+      class="code"
+      :codeValue="codeSample"
+      theme="dark"
+      lang="javascript"
+      height="auto"
+      width="auto"
+      fontSize="15px"
+    ></HighCode>
   </div>
 </template>
 
@@ -50,6 +59,10 @@ import ResultTitle from '@/components/ResultTitle.vue';
 import {
   EventTarget, DisplayArray, SearchNumber, ResultNumber, SearchIndex,
 } from '@/types';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import { HighCode } from 'vue-highlight-code';
+import 'vue-highlight-code/dist/style.css';
 
 const arr: DisplayArray = Array.from(Array(100).keys());
 const numForSearch: SearchNumber = ref(0);
@@ -77,6 +90,29 @@ const binarySearch = (list: DisplayArray, item: number) => {
   }
   return 'not found';
 };
+
+const codeSample = `
+const binarySearch = (list: DisplayArray, item: number) => {
+  binaryTotalIterations.value = 0;
+  let low = 0;
+  let high = list.length - 1;
+  while (low <= high) {
+    binaryTotalIterations.value += 1;
+    const mid = Math.floor((low + high) / 2);
+    const guess = list[mid];
+    if (guess === item) {
+      return mid;
+    }
+    if (guess > item) {
+      high = mid - 1;
+    } else {
+      low = mid + 1;
+    }
+  }
+  return 'not found';
+};
+
+`;
 
 // eslint-disable-next-line consistent-return
 const simpleSearch = (list: DisplayArray, item: number) => {
