@@ -39,15 +39,7 @@
         <ResultTitle text="Binary search faster" :result="Number(faster)" />
       </div>
     </div>
-    <HighCode
-      class="code"
-      :codeValue="codeSample"
-      theme="dark"
-      lang="javascript"
-      height="auto"
-      width="auto"
-      fontSize="15px"
-    ></HighCode>
+    <AppHighCode v-model="binarySearchCode" />
   </div>
 </template>
 
@@ -59,10 +51,7 @@ import ResultTitle from '@/components/ResultTitle.vue';
 import {
   EventTarget, DisplayArray, SearchNumber, ResultNumber, SearchIndex,
 } from '@/types';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import { HighCode } from 'vue-highlight-code';
-import 'vue-highlight-code/dist/style.css';
+import AppHighCode from '@/components/AppHighCode.vue';
 
 const arr: DisplayArray = Array.from(Array(100).keys());
 const numForSearch: SearchNumber = ref(0);
@@ -91,7 +80,7 @@ const binarySearch = (list: DisplayArray, item: number) => {
   return 'not found';
 };
 
-const codeSample = `
+const binarySearchCode = `
 const binarySearch = (list: DisplayArray, item: number) => {
   binaryTotalIterations.value = 0;
   let low = 0;

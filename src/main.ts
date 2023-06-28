@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 import PrimeVue from 'primevue/config';
+import AppHighCode from '@/components/AppHighCode.vue';
 import App from './App.vue';
 import router from './router';
 
@@ -10,4 +11,5 @@ import 'primevue/resources/themes/lara-light-indigo/theme.css';
 const app = createApp(App);
 app.use(router);
 app.use(PrimeVue);
+app.component('AppHighCode', AppHighCode);
 app.mount('#app');
