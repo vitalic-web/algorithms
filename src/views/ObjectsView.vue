@@ -1,16 +1,11 @@
 <template>
   <h2>Особенности объектов javascript</h2>
-  <ol>
-    <li v-for="(item, index) in objects" :key="index + 'obj'">
-      <div class="arrays">
-        <span class="arrays__title">{{ item.title }}</span>
-        <span class="arrays__text">{{ item.text }}</span>
-      </div>
-    </li>
-  </ol>
+  <AppOrderedList :list="objects" />
 </template>
 
 <script setup>
+import AppOrderedList from '@/components/AppOrderedList.vue';
+
 const objects = [
   {
     title: 'Пары ключ-значение.',
@@ -50,18 +45,3 @@ const objects = [
   },
 ];
 </script>
-
-<style lang="scss">
-.arrays {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 15px;
-  &__title {
-    font-weight: 600;
-  }
-  &__text {
-    text-align: start;
-  }
-}
-</style>

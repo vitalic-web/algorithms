@@ -1,16 +1,11 @@
 <template>
   <h2>Особенности массивов javascript</h2>
-  <ol>
-    <li v-for="(item, index) in arrays" :key="index + 'arr'">
-      <div class="arrays">
-        <span class="arrays__title">{{ item.title }}</span>
-        <span class="arrays__text">{{ item.text }}</span>
-      </div>
-    </li>
-  </ol>
+  <AppOrderedList :list="arrays" />
 </template>
 
 <script setup>
+import AppOrderedList from '@/components/AppOrderedList.vue';
+
 const arrays = [
   {
     title: 'Динамический размер.',
@@ -57,18 +52,3 @@ const arrays = [
   },
 ];
 </script>
-
-<style lang="scss">
-.arrays {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 15px;
-  &__title {
-    font-weight: 600;
-  }
-  &__text {
-    text-align: start;
-  }
-}
-</style>
