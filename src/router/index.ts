@@ -42,6 +42,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'arrays',
     component: () => import('../views/ArraysView.vue'),
   },
+  {
+    path: '/objects',
+    name: 'objects',
+    component: () => import('../views/ObjectsView.vue'),
+  },
 ];
 
 const router = createRouter({
