@@ -52,6 +52,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'sets',
     component: () => import('../views/SetsAndMaps.vue'),
   },
+  {
+    path: '/other',
+    name: 'other',
+    component: () => import('../views/OtherView.vue'),
+  },
 ];
 
 const router = createRouter({
