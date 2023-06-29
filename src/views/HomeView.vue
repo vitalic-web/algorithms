@@ -2,15 +2,26 @@
   <div class="home">
     <h2>Algorithms</h2>
     <div class="home__nav">
-      <RouterLink class="home__nav-item" :to="{ name: 'binary' }">Binary Search</RouterLink>
-      <RouterLink class="home__nav-item" :to="{ name: 'quick' }">Quick Sort</RouterLink>
-      <RouterLink class="home__nav-item" :to="{ name: 'caching' }">Caching</RouterLink>
-      <RouterLink class="home__nav-item" :to="{ name: 'selection' }">Selection Sort</RouterLink>
+      <RouterLink
+        v-for="item in algorithms"
+        :key="item.routeName"
+        class="home__nav-item"
+        :to="{ name: item.routeName }"
+      >
+        {{ item.name }}
+      </RouterLink>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+const algorithms = [
+  { name: 'Binary Search', routeName: 'binary' },
+  { name: 'Quick Sort', routeName: 'quick' },
+  { name: 'Caching', routeName: 'caching' },
+  { name: 'Selection Sort', routeName: 'selection' },
+  { name: 'Recursion', routeName: 'recursion' },
+];
 </script>
 
 <style lang="scss">

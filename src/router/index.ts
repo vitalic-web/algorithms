@@ -27,11 +27,15 @@ const routes: Array<RouteRecordRaw> = [
     name: 'selection',
     component: () => import('../views/SelectionSortView.vue'),
   },
+  {
+    path: '/recursion',
+    name: 'recursion',
+    component: () => import('../views/RecursionView.vue'),
+  },
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
 });
-
 export default router;
