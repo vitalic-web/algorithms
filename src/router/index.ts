@@ -37,6 +37,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'dijkstra',
     component: () => import('../views/DijkstraView.vue'),
   },
+  {
+    path: '/arrays',
+    name: 'arrays',
+    component: () => import('../views/ArraysView.vue'),
+  },
 ];
 
 const router = createRouter({

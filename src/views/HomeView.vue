@@ -11,6 +11,17 @@
         {{ item.name }}
       </RouterLink>
     </div>
+    <h2>Data Structures</h2>
+    <div class="home__nav">
+      <RouterLink
+        v-for="item in dataStructures"
+        :key="item.routeName"
+        class="home__nav-item"
+        :to="{ name: item.routeName }"
+      >
+        {{ item.name }}
+      </RouterLink>
+    </div>
   </div>
 </template>
 
@@ -22,6 +33,10 @@ const algorithms = [
   { name: 'Selection Sort', routeName: 'selection' },
   { name: 'Recursion', routeName: 'recursion' },
   { name: 'Dijkstra', routeName: 'dijkstra' },
+];
+
+const dataStructures = [
+  { name: 'Arrays', routeName: 'arrays' },
 ];
 </script>
 
