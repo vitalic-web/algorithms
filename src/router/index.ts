@@ -32,6 +32,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'recursion',
     component: () => import('../views/RecursionView.vue'),
   },
+  {
+    path: '/dijkstra',
+    name: 'dijkstra',
+    component: () => import('../views/DijkstraView.vue'),
+  },
 ];
 
 const router = createRouter({

@@ -21,6 +21,7 @@ const algorithms = [
   { name: 'Caching', routeName: 'caching' },
   { name: 'Selection Sort', routeName: 'selection' },
   { name: 'Recursion', routeName: 'recursion' },
+  { name: 'Dijkstra', routeName: 'dijkstra' },
 ];
 </script>
 
