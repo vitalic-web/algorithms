@@ -38,6 +38,7 @@ const algorithms = [
 const dataStructures = [
   { name: 'Arrays', routeName: 'arrays' },
   { name: 'Objects', routeName: 'objects' },
+  { name: 'Sets And Maps', routeName: 'sets' },
 ];
 </script>
 

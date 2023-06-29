@@ -2,7 +2,7 @@
   <ol>
     <li v-for="(item, index) in list" :key="index + item.title + item.text[0]">
       <div class="arrays">
-        <span class="arrays__title">{{ item.title }}</span>
+        <span v-if="item.title" class="arrays__title">{{ item.title }}</span>
         <span class="arrays__text">{{ item.text }}</span>
       </div>
     </li>
