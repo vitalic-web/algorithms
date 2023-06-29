@@ -15,12 +15,17 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/quick',
     name: 'quick',
-    component: () => import('../views/QuickSearchView.vue'),
+    component: () => import('../views/QuickSortView.vue'),
   },
   {
     path: '/caching',
     name: 'caching',
     component: () => import('../views/CachingView.vue'),
+  },
+  {
+    path: '/selection',
+    name: 'selection',
+    component: () => import('../views/SelectionSortView.vue'),
   },
 ];
 

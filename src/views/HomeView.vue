@@ -5,6 +5,7 @@
       <RouterLink class="home__nav-item" :to="{ name: 'binary' }">Binary Search</RouterLink>
       <RouterLink class="home__nav-item" :to="{ name: 'quick' }">Quick Sort</RouterLink>
       <RouterLink class="home__nav-item" :to="{ name: 'caching' }">Caching</RouterLink>
+      <RouterLink class="home__nav-item" :to="{ name: 'selection' }">Selection Sort</RouterLink>
     </div>
   </div>
 </template>

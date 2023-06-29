@@ -39,20 +39,9 @@
 
 <script setup>
 import { ref } from 'vue';
+import { getShuffledArray } from '@/utils';
 
-// алгоритм Фишера-Йетса для перемешивания упорядоченного массива
-const shuffleArray = (array) => {
-  // eslint-disable-next-line no-plusplus
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    // eslint-disable-next-line no-param-reassign
-    [array[i], array[j]] = [array[j], array[i]]; // меняем местами элементы
-  }
-  return array;
-};
-
-const sortedArray = Array.from(Array(30).keys());
-const notSortedArr = shuffleArray(sortedArray);
+const notSortedArr = getShuffledArray(30);
 const quickSortedArray = ref([]);
 
 const quickSort = (arr) => {
