@@ -77,6 +77,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'component',
     component: () => import('../views/ComponentBasedView.vue'),
   },
+  {
+    path: '/architecture/micro',
+    name: 'micro',
+    component: () => import('../views/MicroFrontendsView.vue'),
+  },
 ];
 
 const router = createRouter({
