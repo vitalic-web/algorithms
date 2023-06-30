@@ -62,6 +62,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'architecture',
     component: () => import('../views/SPAArchitectureView.vue'),
   },
+  {
+    path: '/architecture/mvc',
+    name: 'mvc',
+    component: () => import('../views/MVCView.vue'),
+  },
 ];
 
 const router = createRouter({

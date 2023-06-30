@@ -4,6 +4,7 @@
       <div class="arrays">
         <span v-if="item.title" class="arrays__title">{{ item.title }}</span>
         <span class="arrays__text">{{ item.text }}</span>
+        <RouterLink v-if="item.routeName" :to="{ name: item.routeName }">Пример</RouterLink>
       </div>
     </li>
   </ol>
