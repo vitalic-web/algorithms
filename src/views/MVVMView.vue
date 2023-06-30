@@ -2,7 +2,7 @@
   <ArchitectureLayout>
     <template v-slot:title>MVVM</template>
     <template v-slot:image>
-      <img src="../assets/images/mvvm.png" alt="mvc">
+      <img src="../assets/images/mvvm.png" alt="mvvm">
     </template>
     <template v-slot:subtitle>
     </template>

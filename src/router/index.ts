@@ -72,6 +72,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'mvvm',
     component: () => import('../views/MVVMView.vue'),
   },
+  {
+    path: '/architecture/component',
+    name: 'component',
+    component: () => import('../views/ComponentBasedView.vue'),
+  },
 ];
 
 const router = createRouter({
