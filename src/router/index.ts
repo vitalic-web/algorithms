@@ -82,6 +82,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'micro',
     component: () => import('../views/MicroFrontendsView.vue'),
   },
+  {
+    path: '/architecture/feature',
+    name: 'feature',
+    component: () => import('../views/FeatureSlicedView.vue'),
+  },
 ];
 
 const router = createRouter({
