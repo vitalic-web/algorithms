@@ -4,11 +4,11 @@
     <template v-slot:image>
       <img src="../assets/images/mvc.png" alt="mvc">
     </template>
+    <template v-slot:subtitle>
+      Подход MVC (Model-View-Controller) в применении к Vue.js может быть реализован, но стоит
+      помнить, что Vue.js более идеологически близок к MVVM (Model-View-ViewModel).
+    </template>
     <template v-slot:description>
-      <span>
-        Подход MVC (Model-View-Controller) в применении к Vue.js может быть реализован, но стоит
-        помнить, что Vue.js более идеологически близок к MVVM (Model-View-ViewModel).
-      </span>
       <ul>
         <li>
           <b>Model (Модель):</b> Папка /models содержит все модели данных, которые представляют
