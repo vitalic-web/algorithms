@@ -22,6 +22,10 @@
         {{ item.name }}
       </RouterLink>
     </div>
+    <h2>SPA Architecture</h2>
+    <RouterLink class="home__nav-item home__nav-item-spa" :to="{ name: 'architecture' }">
+      Architecture List
+    </RouterLink>
   </div>
 </template>
 
@@ -60,6 +64,10 @@ const dataStructures = [
       color: blue;
       font-size: 25px;
       font-weight: 500;
+      &-spa {
+        width: 290px;
+        align-self: center;
+      }
     }
   }
 }

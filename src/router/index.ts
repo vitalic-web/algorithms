@@ -57,6 +57,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'other',
     component: () => import('../views/OtherView.vue'),
   },
+  {
+    path: '/architecture',
+    name: 'architecture',
+    component: () => import('../views/SPAArchitectureView.vue'),
+  },
 ];
 
 const router = createRouter({
